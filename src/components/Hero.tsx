@@ -18,13 +18,15 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
         <div className="eyebrow">Помощь рядом с домом</div>
 
         <h1 className="mt-[18px] font-display text-[2.6rem] font-bold leading-[1.06] tracking-[-0.005em] text-foreground sm:text-[3.4rem] lg:text-[62px]">
-          Здесь помогают
+          Помогаем <em className="font-medium italic text-accent">менять</em>
           <br />
-          соседям — <em className="font-medium italic text-accent">по-настоящему</em>
+          жизни к лучшему
         </h1>
 
-        <p className="mt-4 max-w-[42ch] text-[1.05rem] text-muted-foreground">
-          Продукты, вещи и сопровождение для семей, пожилых и людей в трудной ситуации в Октябрьском.
+        <p className="mt-4 max-w-[46ch] text-[1.05rem] text-muted-foreground">
+          <span className="font-medium text-foreground">Наша миссия</span> — создавать возможности для
+          каждого, кто оказался в трудной ситуации. Мы верим, что доброта и поддержка могут изменить мир
+          вокруг нас.
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-3.5">
@@ -32,18 +34,18 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
             onClick={onDonate}
             className="inline-flex items-center justify-center rounded-[var(--hero-radius)] bg-accent px-[22px] py-[11px] text-[0.9rem] font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
           >
-            Сделать пожертвование
+            Стать частью команды
           </button>
           <button
             onClick={onRequestHelp}
             className="inline-flex items-center justify-center rounded-[var(--hero-radius)] px-[22px] py-[11px] text-[0.9rem] font-semibold text-foreground shadow-[inset_0_0_0_1px_var(--hero-x-line)] transition-colors hover:bg-muted"
           >
-            Получить помощь
+            Нужна помощь?
           </button>
         </div>
 
         <p className="mt-4 text-[0.8rem] text-muted-foreground">
-          Отчёт о каждом сборе публикуем в разделе «Документы и отчёты».
+          Отчёты о работе организации публикуем в разделе «Документы и отчёты».
         </p>
       </div>
 
@@ -66,8 +68,10 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
         </div>
 
         <div className="absolute -bottom-3.5 right-0 rounded-[var(--hero-radius)] bg-card px-[18px] py-3 text-[0.8rem] text-muted-foreground shadow-[inset_0_0_0_1px_var(--hero-x-line)] sm:-right-[18px]">
-          <b className="block font-display text-[1.5em] font-bold leading-[1.1] text-foreground">214 семей</b>
-          получили помощь с начала года
+          <b className="block font-display text-[1.5em] font-bold leading-[1.1] text-foreground">
+            Дари Добро
+          </b>
+          г. Октябрьский, Республика Башкортостан
         </div>
       </div>
     </div>

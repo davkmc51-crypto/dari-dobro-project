@@ -34,9 +34,10 @@ export const Projects = () => (
             <h3 className="mt-6 font-display text-2xl font-bold text-foreground">{p.title}</h3>
             <p className="mt-2 max-w-[46ch] text-[0.95rem] text-muted-foreground">{p.text}</p>
 
-            <div className="mt-7 flex items-baseline gap-3 border-t pt-5">
-              <span className="font-display text-3xl font-bold text-accent">{p.stat}</span>
-              <span className="text-sm text-muted-foreground">{p.statLabel}</span>
+            <div className="mt-7 border-t pt-5">
+              <span className="inline-block rounded-[var(--hero-radius)] bg-muted px-3 py-1.5 text-[0.78rem] font-semibold text-accent">
+                {p.stat}
+              </span>
             </div>
           </article>
         ))}

@@ -93,7 +93,7 @@ export const Contacts = () => {
                 <Icon name="Map" size={22} className="mx-auto mb-2 text-accent" />
                 {ORG.city}
                 <br />
-                Пункт приёма помощи: ул. Девонская, 21
+                ул. Островского, 5б, ТЦ «РИО», цокольный этаж
               </span>
             </div>
           </div>

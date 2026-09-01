@@ -11,10 +11,10 @@ export const Partners = () => (
             Рядом с нами — те, кто <em className="font-medium italic text-accent">помогает делом</em>
           </>
         }
-        text="Компании и учреждения города, без которых наши программы не работали бы."
+        text="Компании и организации, которые поддерживают нашу миссию."
       />
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-[var(--hero-radius)] bg-border sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-px overflow-hidden rounded-[var(--hero-radius)] bg-border sm:grid-cols-2 lg:grid-cols-4">
         {PARTNERS.map((p) => (
           <div key={p.name} className="reveal bg-card p-7 transition-colors hover:bg-muted">
             <h3 className="font-display text-lg font-bold text-foreground">{p.name}</h3>

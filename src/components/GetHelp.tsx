@@ -7,7 +7,7 @@ import { toast } from '@/hooks/use-toast';
 type Errors = Partial<Record<'name' | 'phone' | 'message', string>>;
 
 export const GetHelp = () => {
-  const [form, setForm] = useState({ name: '', phone: '', category: 'Продукты и вещи', message: '' });
+  const [form, setForm] = useState({ name: '', phone: '', category: 'Продовольственная помощь', message: '' });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
 
@@ -46,8 +46,23 @@ export const GetHelp = () => {
                   Если сейчас трудно — <em className="font-medium italic text-accent">напишите нам</em>
                 </>
               }
-              text="Мы помогаем жителям города Октябрьский и ближайших посёлков. Обращение бесплатное и конфиденциальное."
+              text="Если вы или ваши близкие оказались в трудной ситуации — мы рядом. Мы сохраняем конфиденциальность и уважаем личные границы каждого обратившегося."
             />
+
+            <ul className="reveal mt-8 space-y-2.5 text-[0.95rem] text-muted-foreground">
+              {[
+                'Семьи с детьми в трудной жизненной ситуации',
+                'Пожилые люди, оставшиеся без поддержки',
+                'Люди с ограниченными возможностями',
+                'Жертвы насилия или стихийных бедствий',
+                'Любые категории граждан, нуждающиеся в поддержке',
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2.5">
+                  <Icon name="Check" size={16} className="mt-1 shrink-0 text-accent" />
+                  {t}
+                </li>
+              ))}
+            </ul>
 
             <ol className="reveal mt-10 space-y-6">
               {HELP_STEPS.map((s) => (
@@ -80,7 +95,7 @@ export const GetHelp = () => {
                 <button
                   onClick={() => {
                     setSent(false);
-                    setForm({ name: '', phone: '', category: 'Продукты и вещи', message: '' });
+                    setForm({ name: '', phone: '', category: 'Продовольственная помощь', message: '' });
                   }}
                   className="mt-8 text-sm text-accent story-link"
                 >
@@ -112,11 +127,10 @@ export const GetHelp = () => {
                     Какая помощь нужна
                   </label>
                   <select id="gh-cat" value={form.category} onChange={set('category')} className={field}>
-                    <option>Продукты и вещи</option>
-                    <option>Тепло и бытовой ремонт</option>
-                    <option>Помощь с документами</option>
-                    <option>Здоровье и лекарства</option>
-                    <option>Помощь детям</option>
+                    <option>Продовольственная помощь</option>
+                    <option>Образование и развитие</option>
+                    <option>Медицинская поддержка</option>
+                    <option>Психологическая помощь</option>
                     <option>Другое</option>
                   </select>
                 </div>

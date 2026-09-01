@@ -61,7 +61,7 @@ export const Documents = () => (
               <AccordionContent className="pb-0">
                 <div className="border-t">
                   {REPORTS_MONTHLY.map((r) => (
-                    <FileRow key={r.title} title={r.title} meta={`Расходы ${r.sum}`} icon={r.icon} />
+                    <FileRow key={r.title} title={r.title} meta={r.sum} icon={r.icon} />
                   ))}
                 </div>
               </AccordionContent>
@@ -77,7 +77,7 @@ export const Documents = () => (
               <AccordionContent className="pb-0">
                 <div className="border-t">
                   {REPORTS_ANNUAL.map((r) => (
-                    <FileRow key={r.title} title={r.title} meta={`Расходы ${r.sum}`} icon={r.icon} />
+                    <FileRow key={r.title} title={r.title} meta={r.sum} icon={r.icon} />
                   ))}
                 </div>
               </AccordionContent>
@@ -86,8 +86,7 @@ export const Documents = () => (
 
           <p className="mt-6 flex items-start gap-2.5 text-[0.85rem] text-muted-foreground">
             <Icon name="Info" size={16} className="mt-0.5 shrink-0 text-accent" />
-            С 2025 года организация ежегодно сдаёт отчётность в Министерство юстиции Российской Федерации.
-            Опубликованные здесь отчёты соответствуют сданным в Минюст.
+            С 2025 года мы сдаём отчёты в Минюст НКО в электронном виде.
           </p>
         </div>
 
@@ -97,12 +96,10 @@ export const Documents = () => (
             {[
               ['Полное наименование', ORG.full],
               ['ИНН', ORG.inn],
-              ['КПП', ORG.kpp],
               ['ОГРН', ORG.ogrn],
-              ['Юридический адрес', ORG.address],
-              ['Расчётный счёт', ORG.account],
-              ['Банк', ORG.bank],
-              ['БИК', ORG.bik],
+              ['Адрес', ORG.address],
+              ['Телефон', ORG.phone],
+              ['Электронная почта', ORG.email],
             ].map(([k, v]) => (
               <div key={k} className="border-b border-border/70 pb-3 last:border-b-0">
                 <dt className="text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground">{k}</dt>
