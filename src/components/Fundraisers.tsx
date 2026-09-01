@@ -83,7 +83,7 @@ export const Fundraisers = ({ onDonate }: FundraisersProps) => (
                   />
                 </div>
                 <div className="mt-2 text-[0.78rem] text-muted-foreground">
-                  Собрано {50}%
+                  Собрано {0}%
                 </div>
               </div>
 
