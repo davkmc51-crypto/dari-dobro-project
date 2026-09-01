@@ -38,7 +38,7 @@ export const Header = ({ onDonate }: HeaderProps) => {
 
   return (
     <header
-      className={`img src="http://xn-----6kcbgpc4a5bkgbuf.xn--p1ai/wp-content/uploads/2026/08/cropped-S2NeUVX2-GRXhAAILDGs0KPYKX-XqWvLHXcvtau3QwmZ_h9kwJqbxJH4Iw4MDidNp-V6a2cekDRQsVcCgp0_Qq9l-fotor-bg-remover-2026081320519-1.png" alt="" class="wp-image-503"/> fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "border-b bg-background/90 py-3 backdrop-blur-md"
           : "border-b border-transparent py-5"
