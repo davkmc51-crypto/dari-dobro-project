@@ -57,7 +57,7 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
           className="h-[320px] w-full overflow-hidden shadow-[inset_0_0_0_1px_var(--hero-x-line)] sm:h-[402px]"
           style={{
             borderRadius: '226px 226px var(--hero-radius) var(--hero-radius)',
-            background: 'var(--hero-x-photo-tint)',
+            background: '#ffffff',
           }}
         >
           <img
