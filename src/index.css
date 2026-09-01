@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 60 17% 98%;
+    --background: 220 6% 93%;
     --foreground: 60 4% 11%;
 
     --card: 0 0% 100%;
@@ -19,8 +19,8 @@
     --secondary: 115 20% 76%;
     --secondary-foreground: 140 24% 22%;
 
-    --muted: 60 12% 94%;
-    --muted-foreground: 60 3% 47%;
+    --muted: 220 8% 89%;
+    --muted-foreground: 60 3% 40%;
 
     --accent: 0 72% 51%;
     --accent-foreground: 0 0% 100%;
@@ -35,7 +35,7 @@
     --radius: 0.25rem;
 
     /* Hero design tokens (перенесены 1-в-1 из выбранного варианта) */
-    --hero-bg: #fafaf8;
+    --hero-bg: #eceef0;
     --hero-surface: #ffffff;
     --hero-text: #1c1c1a;
     --hero-muted: #8a8a84;
