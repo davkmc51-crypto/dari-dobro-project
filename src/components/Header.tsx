@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import Icon from '@/components/ui/icon';
-import Logo from '@/components/Logo';
-import { NAV } from '@/data/site';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useEffect, useState } from "react";
+import Icon from "@/components/ui/icon";
+import Logo from "@/components/Logo";
+import { NAV } from "@/data/site";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 interface HeaderProps {
   onDonate: () => void;
@@ -11,32 +11,37 @@ interface HeaderProps {
 export const Header = ({ onDonate }: HeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState('#hero');
+  const [active, setActive] = useState("#hero");
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 12);
       const positions = NAV.map((n) => {
         const el = document.querySelector<HTMLElement>(n.href);
-        return { href: n.href, top: el ? el.getBoundingClientRect().top : Infinity };
+        return {
+          href: n.href,
+          top: el ? el.getBoundingClientRect().top : Infinity,
+        };
       }).filter((p) => p.top <= 160);
       if (positions.length) setActive(positions[positions.length - 1].href);
     };
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const go = (href: string) => {
     setOpen(false);
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b bg-background/90 py-3 backdrop-blur-md' : 'border-b border-transparent py-5'
+      className={`img src="http://xn-----6kcbgpc4a5bkgbuf.xn--p1ai/wp-content/uploads/2026/08/cropped-S2NeUVX2-GRXhAAILDGs0KPYKX-XqWvLHXcvtau3QwmZ_h9kwJqbxJH4Iw4MDidNp-V6a2cekDRQsVcCgp0_Qq9l-fotor-bg-remover-2026081320519-1.png" alt="" class="wp-image-503"/> fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b bg-background/90 py-3 backdrop-blur-md"
+          : "border-b border-transparent py-5"
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-8 px-5 lg:px-14">
@@ -48,7 +53,9 @@ export const Header = ({ onDonate }: HeaderProps) => {
               key={item.href}
               onClick={() => go(item.href)}
               className={`story-link transition-colors ${
-                active === item.href ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
+                active === item.href
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.label}
@@ -73,7 +80,10 @@ export const Header = ({ onDonate }: HeaderProps) => {
                 <Icon name="Menu" size={20} />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[86vw] max-w-sm bg-background">
+            <SheetContent
+              side="right"
+              className="w-[86vw] max-w-sm bg-background"
+            >
               <div className="mt-8 flex flex-col gap-1">
                 {NAV.map((item) => (
                   <button
