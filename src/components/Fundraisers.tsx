@@ -69,7 +69,7 @@ export const Fundraisers = ({ onDonate }: FundraisersProps) => (
                   </span>
                 </div>
                 <div
-                  className="mt-3 h-1.5 overflow-hidden rounded-sm"
+                  className="mt-5 h-1.5 overflow-hidden rounded-sm"
                   style={{ background: "var(--hero-x-line)" }}
                 >
                   <i
