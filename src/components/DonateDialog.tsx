@@ -1,119 +1,76 @@
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Icon from '@/components/ui/icon';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { FUNDRAISERS, ORG } from '@/data/site';
-import { toast } from '@/hooks/use-toast';
+import { ORG } from '@/data/site';
 
 interface DonateDialogProps {
   open: boolean;
   onOpenChange: (v: boolean) => void;
 }
 
-const AMOUNTS = [300, 500, 1000, 3000];
+const WIDGET_SID = '979e5f08-eca2-4455-bc3e-58aae0943d2d';
+const WIDGET_SRC = `https://widgets.donation.ru/forms/${WIDGET_SID}/form.js`;
 
 export const DonateDialog = ({ open, onOpenChange }: DonateDialogProps) => {
-  const [amount, setAmount] = useState(500);
-  const [custom, setCustom] = useState('');
-  const [target, setTarget] = useState('Наибольшая нужда');
-  const [monthly, setMonthly] = useState(false);
+  const loaded = useRef(false);
 
-  const value = custom ? Number(custom.replace(/\D/g, '')) : amount;
+  useEffect(() => {
+    if (loaded.current) return;
+    loaded.current = true;
+    if (document.querySelector(`script[src="${WIDGET_SRC}"]`)) return;
+    const script = document.createElement('script');
+    script.src = WIDGET_SRC;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
-  const submit = () => {
-    if (!value || value < 50) {
-      toast({ title: 'Минимальная сумма — 50 ₽', description: 'Укажите сумму пожертвования.' });
-      return;
-    }
-    onOpenChange(false);
-    toast({
-      title: 'Спасибо за вашу помощь!',
-      description: `Пожертвование ${value.toLocaleString('ru-RU')} ₽${
-        monthly ? ' ежемесячно' : ''
-      } · ${target}. Платёжный виджет donation.ru подключим на этапе запуска.`,
-    });
-  };
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-lg rounded-[var(--hero-radius)] bg-card">
-        <DialogHeader>
-          <DialogTitle className="font-display text-2xl font-bold">Сделать пожертвование</DialogTitle>
-          <DialogDescription>
-            Любая сумма помогает. Отчёт о расходовании публикуем в разделе «Документы и отчёты».
-          </DialogDescription>
-        </DialogHeader>
+    <div
+      className={`fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto p-4 transition-opacity duration-200 sm:p-6 ${
+        open ? 'opacity-100' : 'pointer-events-none invisible opacity-0'
+      }`}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Сделать пожертвование"
+    >
+      <div
+        className="fixed inset-0 bg-foreground/60"
+        onClick={() => onOpenChange(false)}
+        aria-hidden="true"
+      />
 
-        <div className="space-y-5 pt-1">
+      <div className="relative my-auto w-full max-w-xl rounded-[var(--hero-radius)] bg-card p-6 shadow-2xl sm:p-8">
+        <div className="flex items-start justify-between gap-4">
           <div>
-            <div className="mb-2 text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">Сумма</div>
-            <div className="flex flex-wrap gap-2">
-              {AMOUNTS.map((a) => (
-                <button
-                  key={a}
-                  onClick={() => {
-                    setAmount(a);
-                    setCustom('');
-                  }}
-                  className={`rounded-[var(--hero-radius)] px-4 py-2.5 text-sm font-medium transition-colors ${
-                    !custom && amount === a
-                      ? 'bg-accent text-accent-foreground'
-                      : 'bg-muted text-foreground hover:bg-secondary hover:text-secondary-foreground'
-                  }`}
-                >
-                  {a.toLocaleString('ru-RU')} ₽
-                </button>
-              ))}
-              <input
-                value={custom}
-                onChange={(e) => setCustom(e.target.value.replace(/\D/g, ''))}
-                placeholder="Своя сумма"
-                inputMode="numeric"
-                className="w-32 rounded-[var(--hero-radius)] bg-muted px-4 py-2.5 text-sm outline-none ring-accent placeholder:text-muted-foreground focus:ring-1"
-              />
-            </div>
+            <h2 className="font-display text-2xl font-bold text-foreground">Сделать пожертвование</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Любая сумма помогает. Отчёт о расходовании публикуем в разделе «Документы и отчёты».
+            </p>
           </div>
-
-          <div>
-            <div className="mb-2 text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
-              Назначение
-            </div>
-            <select
-              value={target}
-              onChange={(e) => setTarget(e.target.value)}
-              className="w-full rounded-[var(--hero-radius)] bg-muted px-4 py-3 text-sm outline-none ring-accent focus:ring-1"
-            >
-              <option>Наибольшая нужда</option>
-              {FUNDRAISERS.map((f) => (
-                <option key={f.title}>{f.title}</option>
-              ))}
-            </select>
-          </div>
-
-          <label className="flex cursor-pointer items-center gap-3 text-sm text-foreground">
-            <input
-              type="checkbox"
-              checked={monthly}
-              onChange={(e) => setMonthly(e.target.checked)}
-              className="h-4 w-4 accent-[var(--hero-accent)]"
-            />
-            Повторять ежемесячно — самая устойчивая помощь
-          </label>
-
           <button
-            onClick={submit}
-            className="w-full rounded-[var(--hero-radius)] bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition-transform hover:scale-[1.01]"
+            onClick={() => onOpenChange(false)}
+            aria-label="Закрыть"
+            className="shrink-0 rounded-[var(--hero-radius)] p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
-            Пожертвовать {value ? `${value.toLocaleString('ru-RU')} ₽` : ''}
+            <Icon name="X" size={20} />
           </button>
-
-          <p className="flex items-start gap-2 text-xs text-muted-foreground">
-            <Icon name="ShieldCheck" size={16} className="mt-0.5 shrink-0 text-accent" />
-            Платежи проводятся через сервис donation.ru. Нажимая кнопку, вы принимаете условия публичной
-            оферты. Получатель: {ORG.full}, ИНН {ORG.inn}.
-          </p>
         </div>
-      </DialogContent>
-    </Dialog>
+
+        <div className="mt-6" id={WIDGET_SID} data-d7wl-dispatched="true" />
+
+        <p className="mt-6 flex items-start gap-2 text-xs text-muted-foreground">
+          <Icon name="ShieldCheck" size={16} className="mt-0.5 shrink-0 text-accent" />
+          Платежи проводятся через сервис donation.ru. Нажимая кнопку оплаты, вы принимаете условия
+          публичной оферты. Получатель: {ORG.full}, ИНН {ORG.inn}.
+        </p>
+      </div>
+    </div>
   );
 };
 
