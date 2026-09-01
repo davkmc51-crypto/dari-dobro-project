@@ -17,7 +17,12 @@ export const ORG = {
 };
 
 export const SOCIALS = [
-  { label: "ВКонтакте", short: "VK", href: "#", icon: "Users" },
+  {
+    label: "ВКонтакте",
+    short: "VK",
+    href: "#",
+    icon: "https://vk.ru/daridobrookt",
+  },
   { label: "Telegram", short: "TG", href: "#", icon: "Send" },
   { label: "YouTube", short: "YT", href: "#", icon: "Youtube" },
   { label: "Одноклассники", short: "OK", href: "#", icon: "Smile" },
