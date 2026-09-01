@@ -4,89 +4,105 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 60 17% 98%;
+    --foreground: 60 4% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 60 4% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 60 4% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 140 24% 22%;
+    --primary-foreground: 60 17% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 115 20% 76%;
+    --secondary-foreground: 140 24% 22%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 60 12% 94%;
+    --muted-foreground: 60 3% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 135 12% 86%;
+    --input: 135 12% 86%;
+    --ring: 0 72% 51%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Hero design tokens (перенесены 1-в-1 из выбранного варианта) */
+    --hero-bg: #fafaf8;
+    --hero-surface: #ffffff;
+    --hero-text: #1c1c1a;
+    --hero-muted: #8a8a84;
+    --hero-accent: #dc2626;
+    --hero-accent-contrast: #ffffff;
+    --hero-x-ornament: color-mix(in oklab, #c8823a 55%, #fafaf8);
+    --hero-x-line: color-mix(in oklab, #2c4735 55%, #fafaf8);
+    --hero-x-bar: color-mix(in oklab, #7fa97f 55%, #fafaf8);
+    --hero-x-photo-tint: color-mix(in oklab, #0e1c15 55%, #fafaf8);
+    --hero-radius: 4px;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 60 17% 98%;
+    --sidebar-foreground: 60 4% 11%;
+    --sidebar-primary: 140 24% 22%;
+    --sidebar-primary-foreground: 60 17% 98%;
+    --sidebar-accent: 60 12% 94%;
+    --sidebar-accent-foreground: 140 24% 22%;
+    --sidebar-border: 135 12% 86%;
+    --sidebar-ring: 0 72% 51%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 150 33% 8%;
+    --foreground: 45 33% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 145 26% 15%;
+    --card-foreground: 45 33% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 145 26% 15%;
+    --popover-foreground: 45 33% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 115 20% 76%;
+    --primary-foreground: 150 33% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 140 24% 22%;
+    --secondary-foreground: 45 33% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 140 24% 18%;
+    --muted-foreground: 125 12% 66%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 45 33% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 140 24% 22%;
+    --input: 140 24% 22%;
+    --ring: 0 72% 51%;
+
+    --hero-bg: #14241c;
+    --hero-surface: #1d3226;
+    --hero-text: #f3eee1;
+    --hero-muted: #9fb3a2;
+    --hero-x-ornament: #c8823a;
+    --hero-x-line: #2c4735;
+    --hero-x-bar: #7fa97f;
+    --hero-x-photo-tint: #0e1c15;
+
+    --sidebar-background: 150 33% 8%;
+    --sidebar-foreground: 45 33% 92%;
+    --sidebar-primary: 115 20% 76%;
+    --sidebar-primary-foreground: 150 33% 8%;
+    --sidebar-accent: 140 24% 18%;
+    --sidebar-accent-foreground: 45 33% 92%;
+    --sidebar-border: 140 24% 22%;
+    --sidebar-ring: 0 72% 51%;
   }
 }
 
@@ -95,7 +111,93 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .hero-line {
+    border-color: var(--hero-x-line);
+  }
+
+  .eyebrow {
+    @apply flex items-center gap-3 text-[0.76rem] uppercase tracking-[0.2em] text-muted-foreground;
+  }
+
+  .eyebrow::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--hero-x-line);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .story-link {
+    position: relative;
+  }
+
+  .story-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  .story-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .grain {
+    position: relative;
+  }
+
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

@@ -1,15 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Mission from '@/components/Mission';
+import Fundraisers from '@/components/Fundraisers';
+import Projects from '@/components/Projects';
+import News from '@/components/News';
+import About from '@/components/About';
+import Documents from '@/components/Documents';
+import HowToHelp from '@/components/HowToHelp';
+import GetHelp from '@/components/GetHelp';
+import Partners from '@/components/Partners';
+import Contacts from '@/components/Contacts';
+import Footer from '@/components/Footer';
+import DonateDialog from '@/components/DonateDialog';
+import useReveal from '@/hooks/use-reveal';
 
 const Index = () => {
+  const [donateOpen, setDonateOpen] = useState(false);
+  useReveal();
+
+  const scrollTo = (id: string) => {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-      <span className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-block bg-[#FF6637] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap">
-        Подождите 5 минут, Юра создает первую версию проекта с нуля
-      </span>
+    <div className="min-h-screen bg-background">
+      <Header onDonate={() => setDonateOpen(true)} />
+
+      <main>
+        <Hero onDonate={() => setDonateOpen(true)} onRequestHelp={() => scrollTo('#gethelp')} />
+        <Mission />
+        <Fundraisers onDonate={() => setDonateOpen(true)} />
+        <Projects />
+        <News />
+        <About />
+        <Documents />
+        <HowToHelp onDonate={() => setDonateOpen(true)} onVolunteer={() => scrollTo('#contacts')} />
+        <GetHelp />
+        <Partners />
+        <Contacts />
+      </main>
+
+      <Footer />
+
+      <DonateDialog open={donateOpen} onOpenChange={setDonateOpen} />
     </div>
   );
 };
