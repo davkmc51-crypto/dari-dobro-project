@@ -45,7 +45,7 @@ export const FUNDRAISERS: Fundraiser[] = [
   {
     title: "Дети-сироты",
     desc: "Сбор средств на одежду, учебники и развивающие занятия для детей из детских домов.",
-    raised: 0,
+    raised: 20,
     goal: 350000,
     deadline: "идёт сбор",
   },
