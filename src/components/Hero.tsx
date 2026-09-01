@@ -1,5 +1,6 @@
 import { Kuskar } from '@/components/Kuskar';
 import { FUNDRAISERS } from '@/data/site';
+import heroIllustration from '@/assets/hero-illustration.png';
 
 interface HeroProps {
   onDonate: () => void;
@@ -60,9 +61,9 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
           }}
         >
           <img
-            src="https://cdn.poehali.dev/projects/76917145-2427-4ed9-b7a9-838ed3969d90/files/d79abf0f-2d6f-4853-816b-79613a373335.jpg"
-            alt="Волонтёры собирают продуктовый набор для семьи"
-            className="h-full w-full object-cover object-[50%_42%]"
+            src={heroIllustration}
+            alt="Дари Добро"
+            className="h-full w-full object-cover object-[50%_10%]"
             loading="eager"
           />
         </div>
