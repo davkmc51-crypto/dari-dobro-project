@@ -20,8 +20,8 @@ export const SOCIALS = [
   {
     label: "ВКонтакте",
     short: "VK",
-    href: "#",
-    icon: "https://vk.ru/daridobrookt",
+    href: "https://vk.ru/daridobrookt",
+    icon: "1447",
   },
   { label: "Telegram", short: "TG", href: "#", icon: "Send" },
   { label: "YouTube", short: "YT", href: "#", icon: "Youtube" },
