@@ -42,8 +42,8 @@
     --hero-accent: #dc2626;
     --hero-accent-contrast: #ffffff;
     --hero-x-ornament: color-mix(in oklab, #c8823a 55%, #fafaf8);
-    --hero-x-line: color-mix(in oklab, #2c4735 55%, #fafaf8);
-    --hero-x-bar: color-mix(in oklab, #18bc18 55%, #fafaf8);
+    --hero-x-line: color-mix(in oklab, #20bd54 55%, #fafaf8);
+    --hero-x-bar: color-mix(in oklab, #427342 55%, #fafaf8);
     --hero-x-photo-tint: color-mix(in oklab, #0e1c15 55%, #fafaf8);
     --hero-radius: 4px;
 
