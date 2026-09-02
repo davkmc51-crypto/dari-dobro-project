@@ -3,7 +3,12 @@ import Icon from '@/components/ui/icon';
 import SectionHeading from '@/components/SectionHeading';
 import { NEWS, NEWS_FILTERS } from '@/data/site';
 
-const IMAGE = 'https://cdn.poehali.dev/projects/76917145-2427-4ed9-b7a9-838ed3969d90/files/b1d55937-c68e-44c1-8674-cded0802d08f.jpg';
+const newsImages = import.meta.glob('../assets/news/*.webp', { eager: true, import: 'default' }) as Record<string, string>;
+
+const getImage = (name: string) => {
+  const entry = Object.entries(newsImages).find(([path]) => path.endsWith(`/${name}`));
+  return entry?.[1] ?? '';
+};
 
 export const News = () => {
   const [filter, setFilter] = useState<string>('all');
@@ -47,7 +52,7 @@ export const News = () => {
             >
               <div className="h-48 overflow-hidden" style={{ background: 'var(--hero-x-photo-tint)' }}>
                 <img
-                  src={IMAGE}
+                  src={getImage(n.image)}
                   alt={n.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
