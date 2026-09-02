@@ -85,17 +85,6 @@ export const Contacts = () => {
                 ))}
               </div>
             </div>
-
-            <div
-              className="mt-8 flex h-56 items-center justify-center rounded-[var(--hero-radius)] bg-card text-center text-sm text-muted-foreground shadow-[inset_0_0_0_1px_var(--hero-x-line)]"
-            >
-              <span className="px-6">
-                <Icon name="Map" size={22} className="mx-auto mb-2 text-accent" />
-                {ORG.city}
-                <br />
-                ул. Островского, 5б, ТЦ «РИО», цокольный этаж
-              </span>
-            </div>
           </div>
 
           <form
