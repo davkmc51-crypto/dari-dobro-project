@@ -3,9 +3,10 @@ import SectionHeading from '@/components/SectionHeading';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { DOCUMENTS, ORG, REPORTS_ANNUAL, REPORTS_MONTHLY } from '@/data/site';
 
-const FileRow = ({ title, meta, icon }: { title: string; meta: string; icon: string }) => (
+const FileRow = ({ title, meta, icon, href }: { title: string; meta: string; icon: string; href?: string }) => (
   <a
-    href="#"
+    href={href || '#'}
+    {...(href ? { download: true, target: '_blank', rel: 'noopener noreferrer' } : {})}
     className="group flex items-center gap-4 border-b px-5 py-4 last:border-b-0 transition-colors hover:bg-muted"
   >
     <Icon name={icon} size={20} fallback="File" className="shrink-0 text-accent" />
@@ -45,7 +46,7 @@ export const Documents = () => (
               <AccordionContent className="pb-0">
                 <div className="border-t">
                   {DOCUMENTS.map((d) => (
-                    <FileRow key={d.title} title={d.title} meta={d.type} icon={d.icon} />
+                    <FileRow key={d.title} title={d.title} meta={d.type} icon={d.icon} href={d.href} />
                   ))}
                 </div>
               </AccordionContent>

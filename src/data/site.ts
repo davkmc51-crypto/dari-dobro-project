@@ -327,7 +327,7 @@ export const MEDIA = [
 ];
 
 export const DOCUMENTS = [
-  { title: "Устав АНО", type: "Документ", icon: "FileText" },
+  { title: "Устав АНО", type: "Документ", icon: "FileText", href: "/documents/ustav-ano-dari-dobro.pdf" },
   { title: `ИНН: ${ORG.inn}`, type: "Реквизит", icon: "FileBadge" },
   { title: `ОГРН: ${ORG.ogrn}`, type: "Реквизит", icon: "FileBadge" },
   { title: "Карточка организации", type: "Документ", icon: "FileSignature" },
