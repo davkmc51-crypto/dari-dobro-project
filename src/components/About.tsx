@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import SectionHeading from '@/components/SectionHeading';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AWARDS, DIRECTIONS, MEDIA, ORG, TEAM } from '@/data/site';
+import { AWARDS, MEDIA, ORG, TEAM } from '@/data/site';
 
 const INTRO_TEXT =
   'Привет, друзья! 🎉 Мы — фонд «Дари Добро», и наша миссия — делать мир лучше, помогая тем, кто оказался в трудной жизненной ситуации. Мы поддерживаем детей, семьи, людей с ограниченными возможностями и всех, кто нуждается в помощи.';
@@ -16,10 +15,7 @@ const initials = (name: string) =>
     .map((p) => p[0])
     .join('');
 
-export const About = () => {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
+export const About = () => (
   <section id="about" className="border-t bg-background px-5 py-20 lg:px-14 lg:py-28">
     <div className="mx-auto max-w-[1400px]">
       <SectionHeading
@@ -34,33 +30,6 @@ export const About = () => {
 
       <div className="reveal mt-12 rounded-[var(--hero-radius)] bg-card p-8 shadow-[inset_0_0_0_1px_var(--hero-x-line)] lg:p-10">
         <p className="text-[1.05rem] leading-relaxed text-muted-foreground">{INTRO_TEXT}</p>
-
-        {expanded && (
-          <div className="mt-5">
-            <p className="text-[1.05rem] font-medium text-foreground">Чем мы занимаемся:</p>
-            <ul className="mt-3 space-y-2">
-              {DIRECTIONS.map((d) => (
-                <li key={d.title} className="flex items-start gap-3">
-                  <span aria-hidden className="text-lg leading-none">
-                    {d.emoji}
-                  </span>
-                  <span className="text-[0.98rem] text-muted-foreground">
-                    <span className="font-medium text-foreground">{d.title}.</span> {d.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <button
-          type="button"
-          onClick={() => setExpanded((v) => !v)}
-          className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent/80"
-        >
-          {expanded ? 'Скрыть' : 'Показать ещё'}
-          <Icon name={expanded ? 'ChevronUp' : 'ChevronDown'} size={16} />
-        </button>
       </div>
 
       <Tabs defaultValue="history" className="reveal mt-12">
@@ -165,7 +134,6 @@ export const About = () => {
       </Tabs>
     </div>
   </section>
-  );
-};
+);
 
 export default About;
