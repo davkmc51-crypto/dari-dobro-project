@@ -85,6 +85,18 @@ export const Contacts = () => {
                 ))}
               </div>
             </div>
+
+            <div className="mt-8 overflow-hidden rounded-[var(--hero-radius)] shadow-[inset_0_0_0_1px_var(--hero-x-line)]">
+              <iframe
+                title="Карта с адресом организации"
+                src={`https://yandex.ru/map-widget/v1/?text=${encodeURIComponent(ORG.address)}&z=16&l=map`}
+                width="100%"
+                height="280"
+                frameBorder="0"
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           <form
