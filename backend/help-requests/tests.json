@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Get list of requests",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"items": []},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create help request with invalid data",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "A", "phone": "123", "category": "Другое", "message": "hi"},
+      "expectedStatus": 400
+    }
+  ]
+}

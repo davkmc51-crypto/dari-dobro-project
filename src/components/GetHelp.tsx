@@ -3,6 +3,7 @@ import Icon from '@/components/ui/icon';
 import SectionHeading from '@/components/SectionHeading';
 import { HELP_STEPS } from '@/data/site';
 import { toast } from '@/hooks/use-toast';
+import func2url from '../../backend/func2url.json';
 
 type Errors = Partial<Record<'name' | 'phone' | 'message', string>>;
 
@@ -10,13 +11,14 @@ export const GetHelp = () => {
   const [form, setForm] = useState({ name: '', phone: '', category: 'Продовольственная помощь', message: '' });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [k]: e.target.value });
     setErrors({ ...errors, [k]: undefined });
   };
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const next: Errors = {};
     if (form.name.trim().length < 2) next.name = 'Укажите имя';
@@ -25,11 +27,29 @@ export const GetHelp = () => {
     setErrors(next);
     if (Object.keys(next).length) return;
 
-    setSent(true);
-    toast({
-      title: 'Заявка принята',
-      description: 'Мы свяжемся с вами в рабочие часы, обычно в течение одного дня.',
-    });
+    setLoading(true);
+    try {
+      const res = await fetch(func2url['help-requests'], {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('request failed');
+
+      setSent(true);
+      toast({
+        title: 'Заявка принята',
+        description: 'Мы свяжемся с вами в рабочие часы, обычно в течение одного дня.',
+      });
+    } catch {
+      toast({
+        title: 'Не удалось отправить заявку',
+        description: 'Попробуйте ещё раз или позвоните нам напрямую.',
+        variant: 'destructive',
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const field = 'w-full rounded-[var(--hero-radius)] bg-background px-4 py-3 text-[0.95rem] outline-none ring-accent transition placeholder:text-muted-foreground focus:ring-1';
@@ -145,9 +165,10 @@ export const GetHelp = () => {
 
                 <button
                   type="submit"
-                  className="w-full rounded-[var(--hero-radius)] bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition-transform hover:scale-[1.01]"
+                  disabled={loading}
+                  className="w-full rounded-[var(--hero-radius)] bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition-transform hover:scale-[1.01] disabled:opacity-60"
                 >
-                  Отправить заявку
+                  {loading ? 'Отправка…' : 'Отправить заявку'}
                 </button>
 
                 <p className="text-xs text-muted-foreground">
