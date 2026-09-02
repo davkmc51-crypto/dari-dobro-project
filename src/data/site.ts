@@ -1,18 +1,21 @@
 export const ORG = {
   name: "Дари Добро",
-  full: "Автономная некоммерческая организация «Дари Добро»",
+  full: "Автономная некоммерческая организация оказания социальной помощи «Дари Добро»",
   short: "АНО · Октябрьский, РБ",
   city: "г. Октябрьский, Республика Башкортостан",
   address: "г. Октябрьский, ул. Островского, 5б, ТЦ «РИО», цокольный этаж",
+  legalAddress: "452606, Республика Башкортостан, г. Октябрьский, ул. Кызыл Маяк, д. 55/2",
   phone: "+7 (937) 830-44-82",
   phoneHref: "tel:+79378304482",
   email: "daridobro.okt@yandex.ru",
-  inn: "1234567890",
-  ogrn: "1234567890123",
-  kpp: "—",
-  account: "—",
-  bank: "—",
-  bik: "—",
+  inn: "0265052533",
+  ogrn: "1220200026045",
+  kpp: "026501001",
+  account: "40703810229890000001",
+  corrAccount: "30101810200000000824",
+  bank: "Филиал «Нижегородский» АО «АЛЬФА-БАНК», г. Нижний Новгород",
+  bik: "042202824",
+  director: "Быстрова Алина Рамильевна",
   hours: "Пн–Вс",
 };
 
@@ -330,7 +333,7 @@ export const DOCUMENTS = [
   { title: "Устав АНО", type: "Документ", icon: "FileText", href: "/documents/ustav-ano-dari-dobro.pdf" },
   { title: `ИНН: ${ORG.inn}`, type: "Реквизит", icon: "FileBadge" },
   { title: `ОГРН: ${ORG.ogrn}`, type: "Реквизит", icon: "FileBadge" },
-  { title: "Карточка организации", type: "Документ", icon: "FileSignature" },
+  { title: "Карточка организации", type: "Документ", icon: "FileSignature", href: "/documents/karta-partnera-dari-dobro.pdf" },
 ];
 
 export const REPORTS_MONTHLY = [

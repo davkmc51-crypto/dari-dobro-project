@@ -97,8 +97,12 @@ export const Documents = () => (
             {[
               ['Полное наименование', ORG.full],
               ['ИНН', ORG.inn],
+              ['КПП', ORG.kpp],
               ['ОГРН', ORG.ogrn],
-              ['Адрес', ORG.address],
+              ['Юридический адрес', ORG.legalAddress],
+              ['Расчётный счёт', ORG.account],
+              ['Банк', ORG.bank],
+              ['БИК', ORG.bik],
               ['Телефон', ORG.phone],
               ['Электронная почта', ORG.email],
             ].map(([k, v]) => (
