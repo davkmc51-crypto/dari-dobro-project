@@ -32,9 +32,56 @@ export const NAV = [
   { label: "Главная", href: "#hero" },
   { label: "Об организации", href: "#about" },
   { label: "Проекты", href: "#projects" },
+  { label: "Каталог", href: "#catalog" },
   { label: "Новости", href: "#news" },
   { label: "Документы", href: "#documents" },
   { label: "Контакты", href: "#contacts" },
+];
+
+export type CatalogItem = {
+  icon: string;
+  title: string;
+  text: string;
+  category: string;
+};
+
+export const CATALOG: CatalogItem[] = [
+  {
+    icon: "Shirt",
+    title: "Одежда и обувь",
+    text: "Сезонная одежда, обувь для детей и взрослых в хорошем состоянии.",
+    category: "Вещи",
+  },
+  {
+    icon: "ShoppingBasket",
+    title: "Продукты питания",
+    text: "Крупы, консервы, детское питание с длительным сроком хранения.",
+    category: "Продукты",
+  },
+  {
+    icon: "Pill",
+    title: "Лекарства и гигиена",
+    text: "Средства первой необходимости, предметы личной гигиены, медикаменты.",
+    category: "Медицина",
+  },
+  {
+    icon: "BookOpen",
+    title: "Книги и канцелярия",
+    text: "Учебники, тетради, письменные принадлежности для школьников.",
+    category: "Образование",
+  },
+  {
+    icon: "Baby",
+    title: "Детские товары",
+    text: "Игрушки, коляски, кроватки и другие вещи для малышей.",
+    category: "Дети",
+  },
+  {
+    icon: "Sofa",
+    title: "Мебель и техника",
+    text: "Бытовая техника и мебель в рабочем состоянии для нуждающихся семей.",
+    category: "Быт",
+  },
 ];
 
 export type Fundraiser = {

@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import Mission from '@/components/Mission';
 import Fundraisers from '@/components/Fundraisers';
 import Projects from '@/components/Projects';
+import Catalog from '@/components/Catalog';
 import News from '@/components/News';
 import About from '@/components/About';
 import Documents from '@/components/Documents';
@@ -33,6 +34,7 @@ const Index = () => {
         <Mission />
         <Fundraisers onDonate={() => setDonateOpen(true)} />
         <Projects />
+        <Catalog onDonate={() => setDonateOpen(true)} />
         <News />
         <About />
         <Documents />
