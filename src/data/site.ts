@@ -208,6 +208,7 @@ export type NewsItem = {
   tags: string[];
   filter: "help" | "events" | "projects";
   image: string;
+  href: string;
 };
 
 export const NEWS_FILTERS = [
@@ -226,6 +227,7 @@ export const NEWS: NewsItem[] = [
     tags: ["помощь", "волонтёры"],
     filter: "help",
     image: "news-1.webp",
+    href: "https://vk.ru/daridobrookt",
   },
   {
     id: 2,
@@ -235,6 +237,7 @@ export const NEWS: NewsItem[] = [
     tags: ["проект", "дети"],
     filter: "projects",
     image: "news-2.webp",
+    href: "https://vk.ru/daridobrookt",
   },
   {
     id: 3,
@@ -244,6 +247,7 @@ export const NEWS: NewsItem[] = [
     tags: ["помощь", "гуманитарная помощь"],
     filter: "help",
     image: "news-3.webp",
+    href: "https://vk.ru/daridobrookt",
   },
   {
     id: 4,
@@ -253,6 +257,7 @@ export const NEWS: NewsItem[] = [
     tags: ["событие", "обучение"],
     filter: "events",
     image: "news-4.webp",
+    href: "https://vk.ru/daridobrookt",
   },
   {
     id: 5,
@@ -262,6 +267,7 @@ export const NEWS: NewsItem[] = [
     tags: ["помощь", "миссия"],
     filter: "help",
     image: "news-5.webp",
+    href: "https://vk.ru/daridobrookt",
   },
   {
     id: 6,
@@ -271,6 +277,7 @@ export const NEWS: NewsItem[] = [
     tags: ["событие", "фонд"],
     filter: "events",
     image: "news-6.webp",
+    href: "https://vk.ru/daridobrookt",
   },
   {
     id: 7,
@@ -280,6 +287,17 @@ export const NEWS: NewsItem[] = [
     tags: ["помощь", "пожертвования"],
     filter: "help",
     image: "news-7.webp",
+    href: "https://vk.ru/daridobrookt",
+  },
+  {
+    id: 8,
+    title: "Собрали и передали гуманитарную помощь",
+    desc: "Волонтёры фонда упаковали продукты и вещи для семей в трудной жизненной ситуации. Подробнее — в нашей группе ВКонтакте.",
+    date: "3 сентября 2026",
+    tags: ["событие", "волонтёры"],
+    filter: "events",
+    image: "news-8.webp",
+    href: "https://vk.ru/daridobrookt",
   },
 ];
 

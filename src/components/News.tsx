@@ -46,8 +46,11 @@ export const News = () => {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((n) => (
-            <article
+            <a
               key={n.id}
+              href={n.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group animate-fade-in overflow-hidden rounded-[var(--hero-radius)] bg-card shadow-[inset_0_0_0_1px_var(--hero-x-line)]"
             >
               <div className="h-48 overflow-hidden" style={{ background: 'var(--hero-x-photo-tint)' }}>
@@ -60,20 +63,28 @@ export const News = () => {
               </div>
               <div className="p-6">
                 <div className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">{n.date}</div>
-                <h3 className="mt-3 font-display text-xl font-bold leading-snug text-foreground">{n.title}</h3>
+                <h3 className="mt-3 font-display text-xl font-bold leading-snug text-foreground transition-colors group-hover:text-accent">
+                  {n.title}
+                </h3>
                 <p className="mt-2 text-[0.92rem] text-muted-foreground">{n.desc}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {n.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-[var(--hero-radius)] bg-muted px-2.5 py-1 text-[0.72rem] text-muted-foreground"
-                    >
-                      #{t}
-                    </span>
-                  ))}
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex flex-wrap gap-2">
+                    {n.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-[var(--hero-radius)] bg-muted px-2.5 py-1 text-[0.72rem] text-muted-foreground"
+                      >
+                        #{t}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="flex items-center gap-1 text-[0.78rem] font-medium text-accent">
+                    Читать в VK
+                    <Icon name="ArrowUpRight" size={14} />
+                  </span>
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
 
