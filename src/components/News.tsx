@@ -67,21 +67,15 @@ export const News = () => {
                   {n.title}
                 </h3>
                 <p className="mt-2 text-[0.92rem] text-muted-foreground">{n.desc}</p>
-                <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
-                  <div className="flex flex-wrap gap-2">
-                    {n.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-[var(--hero-radius)] bg-muted px-2.5 py-1 text-[0.72rem] text-muted-foreground"
-                      >
-                        #{t}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="flex items-center gap-1 text-[0.78rem] font-medium text-accent">
-                    Читать в VK
-                    <Icon name="ArrowUpRight" size={14} />
-                  </span>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {n.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-[var(--hero-radius)] bg-muted px-2.5 py-1 text-[0.72rem] text-muted-foreground"
+                    >
+                      #{t}
+                    </span>
+                  ))}
                 </div>
               </div>
             </a>
