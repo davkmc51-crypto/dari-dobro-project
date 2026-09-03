@@ -7,6 +7,7 @@ import Projects from '@/components/Projects';
 import Catalog from '@/components/Catalog';
 import News from '@/components/News';
 import VkCommunity from '@/components/VkCommunity';
+import VkFeed from '@/components/VkFeed';
 import About from '@/components/About';
 import Documents from '@/components/Documents';
 import HowToHelp from '@/components/HowToHelp';
@@ -37,6 +38,7 @@ const Index = () => {
         <Projects />
         <Catalog onDonate={() => setDonateOpen(true)} />
         <News />
+        <VkFeed />
         <VkCommunity />
         <About />
         <Documents />
