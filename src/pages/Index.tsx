@@ -6,6 +6,7 @@ import Fundraisers from '@/components/Fundraisers';
 import Projects from '@/components/Projects';
 import Catalog from '@/components/Catalog';
 import News from '@/components/News';
+import VkCommunity from '@/components/VkCommunity';
 import About from '@/components/About';
 import Documents from '@/components/Documents';
 import HowToHelp from '@/components/HowToHelp';
@@ -36,6 +37,7 @@ const Index = () => {
         <Projects />
         <Catalog onDonate={() => setDonateOpen(true)} />
         <News />
+        <VkCommunity />
         <About />
         <Documents />
         <HowToHelp onDonate={() => setDonateOpen(true)} onVolunteer={() => scrollTo('#contacts')} />
