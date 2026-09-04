@@ -37,6 +37,7 @@ export const NAV = [
   { label: "Проекты", href: "#projects" },
   { label: "Каталог", href: "#catalog" },
   { label: "Новости", href: "#news" },
+  { label: "Отзывы", href: "#reviews" },
   { label: "Документы", href: "#documents" },
   { label: "Контакты", href: "#contacts" },
 ];

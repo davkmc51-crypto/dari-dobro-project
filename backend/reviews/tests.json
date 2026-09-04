@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Get approved reviews",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"items": []},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create review with invalid data",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "A", "text": "hi", "rating": 5},
+      "expectedStatus": 400
+    },
+    {
+      "name": "Admin list without token forbidden",
+      "method": "GET",
+      "path": "/?all=1",
+      "expectedStatus": 403
+    }
+  ]
+}

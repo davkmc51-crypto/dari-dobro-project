@@ -12,6 +12,7 @@ import Documents from '@/components/Documents';
 import HowToHelp from '@/components/HowToHelp';
 import GetHelp from '@/components/GetHelp';
 import Partners from '@/components/Partners';
+import Reviews from '@/components/Reviews';
 import Contacts from '@/components/Contacts';
 import Footer from '@/components/Footer';
 import DonateDialog from '@/components/DonateDialog';
@@ -43,6 +44,7 @@ const Index = () => {
         <HowToHelp onDonate={() => setDonateOpen(true)} onVolunteer={() => scrollTo('#contacts')} />
         <GetHelp />
         <Partners />
+        <Reviews />
         <Contacts />
       </main>
 
