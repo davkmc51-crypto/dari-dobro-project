@@ -8,10 +8,10 @@ export const Partners = () => (
         eyebrow="Партнёры"
         title={
           <>
-            Рядом с нами — те, кто <em className="font-medium italic text-accent">помогает делом</em>
+            Компании, которые <em className="font-medium italic text-accent">нам помогают</em>
           </>
         }
-        text="Компании и организации, которые поддерживают нашу миссию."
+        text="Организации, с которыми мы регулярно работаем над проектами."
       />
 
       <div className="mt-12 grid gap-px overflow-hidden rounded-[var(--hero-radius)] bg-border sm:grid-cols-2 lg:grid-cols-4">

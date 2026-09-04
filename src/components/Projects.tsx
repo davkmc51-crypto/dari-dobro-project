@@ -9,10 +9,10 @@ export const Projects = () => (
         eyebrow="Проекты и программы"
         title={
           <>
-            Постоянные программы, а не <em className="font-medium italic text-accent">разовые акции</em>
+            Работаем <em className="font-medium italic text-accent">на постоянной основе</em>
           </>
         }
-        text="Каждый проект — это регулярная работа с понятным результатом, который мы показываем в отчётах."
+        text="У каждого проекта есть конкретная цель и цифры — мы публикуем их в отчётах, а не только в момент сбора."
       />
 
       <div className="mt-14 grid gap-px overflow-hidden rounded-[var(--hero-radius)] bg-border sm:grid-cols-2">
