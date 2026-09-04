@@ -15,7 +15,7 @@ export const Projects = () => (
         text="Каждый проект — это регулярная работа с понятным результатом, который мы показываем в отчётах."
       />
 
-      <div className="mt-14 grid gap-px overflow-hidden rounded-[var(--hero-radius)] bg-border sm:grid-cols-2">
+      <div className="mt-14 grid gap-px overflow-hidden rounded-[var(--hero-radius)] sm:grid-cols-2 bg-slate-50">
         {PROJECTS.map((p, i) => (
           <article
             key={p.title}

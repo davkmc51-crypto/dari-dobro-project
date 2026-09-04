@@ -22,9 +22,9 @@ export const VkCommunity = () => {
   }, []);
 
   return (
-    <section className="border-t bg-background px-5 py-16 lg:px-14 lg:py-20">
+    <section className="border-t px-5 py-16 lg:px-14 lg:py-20 bg-slate-100">
       <div className="mx-auto max-w-[1400px]">
-        <div className="grain relative overflow-hidden rounded-[var(--hero-radius)] bg-primary px-6 py-12 text-primary-foreground sm:px-12 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-16 lg:py-14">
+        <div className="grain relative overflow-hidden rounded-[var(--hero-radius)] px-6 py-12 text-primary-foreground sm:px-12 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-16 lg:py-14 bg-slate-200">
           <div className="flex items-center gap-5">
             <span
               className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[var(--hero-radius)] text-2xl font-bold shadow-[inset_0_0_0_1px_hsl(var(--primary-foreground)/0.3)]"
