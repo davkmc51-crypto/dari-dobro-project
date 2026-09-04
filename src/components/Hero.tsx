@@ -19,14 +19,15 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
         <div className="eyebrow">Помощь рядом с домом</div>
 
         <h1 className="mt-[18px] font-display text-[2.6rem] font-bold leading-[1.06] tracking-[-0.005em] text-foreground sm:text-[3.4rem] lg:text-[62px]">
-          Помогаем людям <em className="font-medium italic text-accent">в Октябрьском</em>
+          Помогаем <em className="font-medium italic text-accent">менять</em>
           <br />
-          решать трудные ситуации
+          жизни к лучшему
         </h1>
 
         <p className="mt-4 max-w-[46ch] text-[1.05rem] text-muted-foreground">
-          Собираем вещи, продукты и деньги для тех, кому сейчас тяжело: детей-сирот, пожилых людей,
-          многодетных семей. Каждый месяц публикуем отчёт, куда ушла помощь.
+          <span className="font-medium text-foreground">Наша миссия</span> — создавать возможности для
+          каждого, кто оказался в трудной ситуации. Мы верим, что доброта и поддержка могут изменить мир
+          вокруг нас.
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-3.5">
