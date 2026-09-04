@@ -24,7 +24,7 @@ export const VkCommunity = () => {
   return (
     <section className="border-t px-5 py-16 lg:px-14 lg:py-20 bg-slate-100">
       <div className="mx-auto max-w-[1400px]">
-        <div className="grain relative overflow-hidden rounded-[var(--hero-radius)] px-6 py-12 text-primary-foreground sm:px-12 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-16 lg:py-14 bg-slate-200">
+        <div className="grain relative overflow-hidden rounded-[var(--hero-radius)] px-6 py-12 text-primary-foreground sm:px-12 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-16 lg:py-14 bg-slate-400">
           <div className="flex items-center gap-5">
             <span
               className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[var(--hero-radius)] text-2xl font-bold shadow-[inset_0_0_0_1px_hsl(var(--primary-foreground)/0.3)]"
@@ -33,7 +33,7 @@ export const VkCommunity = () => {
               VK
             </span>
             <div>
-              <div className="text-[0.72rem] uppercase tracking-[0.2em] text-primary-foreground/60">
+              <div className="text-[0.72rem] uppercase tracking-[0.2em] text-primary-foreground/60 bg-transparent">
                 Мы в соцсетях
               </div>
               <h3 className="mt-2 font-display text-[1.7rem] font-bold leading-[1.15] sm:text-[2.1rem]">
