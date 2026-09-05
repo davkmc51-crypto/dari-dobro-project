@@ -1,13 +1,10 @@
 import { Kuskar } from '@/components/Kuskar';
-import { FUNDRAISERS } from '@/data/site';
 import heroIllustration from '@/assets/hero-illustration.png';
 
 interface HeroProps {
   onDonate: () => void;
   onRequestHelp: () => void;
 }
-
-const fmt = (n: number) => n.toLocaleString('ru-RU');
 
 export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
   <section
@@ -74,35 +71,6 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
           </b>
           г. Октябрьский, Республика Башкортостан
         </div>
-      </div>
-    </div>
-
-    <div className="mx-auto grid w-full max-w-[1400px] animate-rise items-end gap-6 border-t pt-4 [animation-delay:0.28s] lg:grid-cols-[repeat(3,1fr)_auto] lg:gap-[34px]">
-      {FUNDRAISERS.map((f) => (
-        <div key={f.title}>
-          <div className="text-[0.95rem] font-medium text-foreground">{f.title}</div>
-          <div
-            className="mt-[7px] h-1 overflow-hidden rounded-sm"
-            style={{ background: 'var(--hero-x-line)' }}
-          >
-            <i
-              className="block h-full rounded-sm"
-              style={{
-                width: `${Math.round((f.raised / f.goal) * 100)}%`,
-                background: f.hot ? 'var(--hero-accent)' : 'var(--hero-x-bar)',
-              }}
-            />
-          </div>
-          <div className="mt-2 flex justify-between gap-3 text-[0.78rem] text-muted-foreground">
-            <span>
-              {fmt(f.raised)} ₽ из {fmt(f.goal)} ₽
-            </span>
-            <span>{f.deadline}</span>
-          </div>
-        </div>
-      ))}
-      <div className="self-end pb-0.5 text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground lg:text-right">
-        Открытые сборы
       </div>
     </div>
   </section>
