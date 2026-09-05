@@ -82,7 +82,7 @@ export const Fundraisers = ({ onDonate }: FundraisersProps) => (
 
               <button
                 onClick={onDonate}
-                className="mt-5 rounded-full bg-pink-600 py-2.5 text-[0.85rem] font-bold uppercase tracking-wide text-white transition-colors hover:bg-pink-700"
+                className="mt-5 rounded-full py-2.5 text-[0.85rem] font-bold uppercase tracking-wide text-white transition-colors hover:bg-pink-700 bg-red-600"
               >
                 Помочь
               </button>
