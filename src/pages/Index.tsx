@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import TotalRaised from '@/components/TotalRaised';
 import Mission from '@/components/Mission';
 import Fundraisers from '@/components/Fundraisers';
 import Projects from '@/components/Projects';
@@ -35,6 +36,7 @@ const Index = () => {
 
       <main>
         <Hero onDonate={() => setDonateOpen(true)} onRequestHelp={() => scrollTo('#gethelp')} />
+        <TotalRaised />
         <Mission />
         <Fundraisers onDonate={() => setDonateOpen(true)} />
         <Projects />
