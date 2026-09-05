@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "name": "Get total donations",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"total": 0.0},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Webhook without secret is forbidden",
+      "method": "POST",
+      "path": "/",
+      "body": {"id": "test-1", "amount": 100, "status": "paid"},
+      "expectedStatus": 403,
+      "bodyMatcher": "partial"
+    }
+  ]
+}

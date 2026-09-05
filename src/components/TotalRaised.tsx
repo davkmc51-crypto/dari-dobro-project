@@ -1,11 +1,25 @@
+import { useEffect, useState } from 'react';
 import Icon from '@/components/ui/icon';
 import useCountUp from '@/hooks/use-count-up';
 import { FUNDRAISERS } from '@/data/site';
+import func2url from '../../backend/func2url.json';
 
 const fmt = (n: number) => n.toLocaleString('ru-RU');
 
+const fallbackTotal = FUNDRAISERS.reduce((sum, f) => sum + f.raised, 0);
+
 export const TotalRaised = () => {
-  const total = FUNDRAISERS.reduce((sum, f) => sum + f.raised, 0);
+  const [total, setTotal] = useState(fallbackTotal);
+
+  useEffect(() => {
+    fetch(func2url.donations)
+      .then((res) => res.json())
+      .then((data) => {
+        if (typeof data.total === 'number') setTotal(data.total);
+      })
+      .catch(() => {});
+  }, []);
+
   const { ref, value } = useCountUp(total);
 
   return (
