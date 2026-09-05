@@ -59,40 +59,38 @@ export const Fundraisers = ({ onDonate }: FundraisersProps) => (
                 {f.desc}
               </p>
 
-              <div className="mt-6">
-                <div className="flex items-baseline justify-between">
-                  <span className="font-display text-2xl font-bold text-foreground">
-                    {fmt(f.raised)} ₽
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    из {fmt(f.goal)} ₽
-                  </span>
+              <div className="mt-6 text-[0.9rem] text-foreground/80">
+                <div>
+                  Собрано <span className="font-bold text-foreground">{fmt(f.raised)}₽</span>
                 </div>
-                <div
-                  className="mt-5 h-1.5 overflow-hidden rounded-sm"
-                  style={{ background: "var(--hero-x-line)" }}
-                >
+                <div className="mt-1">
+                  Требуется <span className="font-bold text-foreground">{fmt(f.goal)}₽</span>
+                </div>
+              </div>
+
+              <div className="relative mt-3 h-6">
+                <div className="h-6 w-full overflow-hidden rounded-full bg-emerald-100">
                   <i
-                    className="block h-full rounded-sm transition-[width] duration-700"
-                    style={{
-                      width: `${percent}%`,
-                      background: f.hot
-                        ? "var(--hero-accent)"
-                        : "var(--hero-x-bar)",
-                    }}
+                    className="block h-full rounded-full bg-emerald-400 transition-[width] duration-700"
+                    style={{ width: `${Math.max(percent, 4)}%` }}
                   />
                 </div>
-                <div className="mt-2 text-[0.78rem] text-muted-foreground">
-                  Собрано {0}%
-                </div>
+                <span className="absolute left-0.5 top-1/2 flex h-5 -translate-y-1/2 items-center rounded-full bg-gradient-to-r from-violet-400 to-pink-400 px-2 text-[0.68rem] font-semibold text-white">
+                  {percent}%
+                </span>
               </div>
 
               <button
                 onClick={onDonate}
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-[var(--hero-radius)] py-3 text-[0.9rem] font-semibold text-foreground shadow-[inset_0_0_0_1px_var(--hero-x-line)] transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="mt-5 rounded-full bg-pink-600 py-2.5 text-[0.85rem] font-bold uppercase tracking-wide text-white transition-colors hover:bg-pink-700"
               >
-                Помочь этому сбору
-                <Icon name="ArrowRight" size={16} />
+                Помочь
+              </button>
+              <button
+                onClick={onDonate}
+                className="mt-2.5 rounded-full bg-sky-400 py-2.5 text-[0.85rem] font-bold uppercase tracking-wide text-white transition-colors hover:bg-sky-500"
+              >
+                Подробнее
               </button>
             </article>
           );
