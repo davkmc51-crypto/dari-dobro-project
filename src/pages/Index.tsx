@@ -16,10 +16,12 @@ import Reviews from '@/components/Reviews';
 import Contacts from '@/components/Contacts';
 import Footer from '@/components/Footer';
 import DonateDialog from '@/components/DonateDialog';
+import SubscribeDialog from '@/components/SubscribeDialog';
 import useReveal from '@/hooks/use-reveal';
 
 const Index = () => {
   const [donateOpen, setDonateOpen] = useState(false);
+  const [subscribeOpen, setSubscribeOpen] = useState(false);
   useReveal();
 
   const scrollTo = (id: string) => {
@@ -41,7 +43,11 @@ const Index = () => {
         <VkCommunity />
         <About />
         <Documents />
-        <HowToHelp onDonate={() => setDonateOpen(true)} onVolunteer={() => scrollTo('#contacts')} />
+        <HowToHelp
+          onDonate={() => setDonateOpen(true)}
+          onVolunteer={() => scrollTo('#contacts')}
+          onSubscribe={() => setSubscribeOpen(true)}
+        />
         <GetHelp />
         <Partners />
         <Reviews />
@@ -51,6 +57,7 @@ const Index = () => {
       <Footer />
 
       <DonateDialog open={donateOpen} onOpenChange={setDonateOpen} />
+      <SubscribeDialog open={subscribeOpen} onOpenChange={setSubscribeOpen} />
     </div>
   );
 };

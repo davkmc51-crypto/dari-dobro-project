@@ -5,9 +5,10 @@ import { HELP_WAYS } from '@/data/site';
 interface HowToHelpProps {
   onDonate: () => void;
   onVolunteer: () => void;
+  onSubscribe: () => void;
 }
 
-export const HowToHelp = ({ onDonate, onVolunteer }: HowToHelpProps) => (
+export const HowToHelp = ({ onDonate, onVolunteer, onSubscribe }: HowToHelpProps) => (
   <section id="help" className="grain relative border-t bg-primary px-5 py-20 text-primary-foreground lg:px-14 lg:py-28">
     <div className="mx-auto max-w-[1400px]">
       <div className="reveal max-w-3xl">
@@ -44,6 +45,12 @@ export const HowToHelp = ({ onDonate, onVolunteer }: HowToHelpProps) => (
             className="rounded-[var(--hero-radius)] bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
           >
             Сделать пожертвование
+          </button>
+          <button
+            onClick={onSubscribe}
+            className="rounded-[var(--hero-radius)] px-7 py-3.5 font-semibold text-primary-foreground shadow-[inset_0_0_0_1px_hsl(var(--primary-foreground)/0.35)] transition-colors hover:bg-primary-foreground/10"
+          >
+            Оформить подписку
           </button>
           <button
             onClick={onVolunteer}
