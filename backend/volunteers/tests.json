@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Reject invalid volunteer request",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "A", "phone": "123"},
+      "expectedStatus": 400,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Accept valid volunteer request",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Тестов", "phone": "+79991234567", "email": "test@test.ru", "skills": "Дизайн", "message": "Хочу помочь"},
+      "expectedStatus": 200,
+      "expectedBody": {"success": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

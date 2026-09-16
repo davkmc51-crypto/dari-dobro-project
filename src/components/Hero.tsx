@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Kuskar } from '@/components/Kuskar';
 import heroIllustration from '@/assets/hero-illustration-new.jpg';
 
@@ -6,7 +7,7 @@ interface HeroProps {
   onRequestHelp: () => void;
 }
 
-export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
+export const Hero = ({ onRequestHelp }: HeroProps) => (
   <section
     id="hero"
     className="grain relative flex min-h-svh flex-col justify-center px-5 pb-8 pt-28 lg:px-14 lg:pb-6 lg:pt-32"
@@ -29,12 +30,12 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-3.5">
-          <button
-            onClick={onDonate}
+          <Link
+            to="/join"
             className="inline-flex items-center justify-center rounded-[var(--hero-radius)] bg-accent px-[22px] py-[11px] text-[0.9rem] font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
           >
             Стать частью команды
-          </button>
+          </Link>
           <button
             onClick={onRequestHelp}
             className="inline-flex items-center justify-center rounded-[var(--hero-radius)] px-[22px] py-[11px] text-[0.9rem] font-semibold text-foreground shadow-[inset_0_0_0_1px_var(--hero-x-line)] transition-colors hover:bg-muted"
