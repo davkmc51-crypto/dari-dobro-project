@@ -207,7 +207,7 @@ export type NewsItem = {
   desc: string;
   date: string;
   tags: string[];
-  filter: "help" | "events" | "projects";
+  filter: "help" | "events" | "projects" | "promo";
   image: string;
   href: string;
 };
@@ -217,6 +217,7 @@ export const NEWS_FILTERS = [
   { key: "help", label: "Помощь" },
   { key: "events", label: "События" },
   { key: "projects", label: "Проекты" },
+  { key: "promo", label: "Акции" },
 ] as const;
 
 export const NEWS: NewsItem[] = [
