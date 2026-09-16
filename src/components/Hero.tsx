@@ -1,5 +1,5 @@
 import { Kuskar } from '@/components/Kuskar';
-import heroIllustration from '@/assets/hero-illustration.png';
+import heroIllustration from '@/assets/hero-illustration-new.jpg';
 
 interface HeroProps {
   onDonate: () => void;
