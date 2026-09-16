@@ -301,6 +301,16 @@ export const NEWS: NewsItem[] = [
     image: "news-8.webp",
     href: "https://vk.ru/daridobrookt",
   },
+  {
+    id: 9,
+    title: "Акция «Дари Добро»",
+    desc: "Участвуйте в нашей благотворительной акции — узнайте подробности и присоединяйтесь на официальном сайте фонда.",
+    date: "16 сентября 2026",
+    tags: ["акция", "помощь"],
+    filter: "promo",
+    image: "news-9.webp",
+    href: "https://а-дари-добро.рф",
+  },
 ];
 
 export const TEAM = [
