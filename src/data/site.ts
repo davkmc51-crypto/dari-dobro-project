@@ -367,7 +367,7 @@ export const REPORTS_ANNUAL = [
 ];
 
 export const PARTNERS = [
-  { name: "Планета Добра", contribution: "Поддерживает миссию организации." },
+  { name: "Планета Добра", contribution: "Поддерживает миссию организации.", logo: "partner-planeta-dobra.png" },
   { name: "Банк «Добро»", contribution: "Поддерживает миссию организации." },
   {
     name: "Агентство «Социум»",
