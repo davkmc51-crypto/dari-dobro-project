@@ -21,10 +21,11 @@ export const Hero = ({ onDonate, onRequestHelp }: HeroProps) => (
           жизни к лучшему
         </h1>
 
-        <p className="mt-4 max-w-[46ch] text-[1.05rem] text-muted-foreground">
-          <span className="font-medium text-foreground">Наша миссия</span> — создавать возможности для
-          каждого, кто оказался в трудной ситуации. Мы верим, что доброта и поддержка могут изменить мир
-          вокруг нас.
+        <p className="mt-4 max-w-[52ch] text-[1.05rem] text-muted-foreground">
+          <span className="font-medium text-foreground">Наша миссия</span> — создание системы комплексной
+          социальной поддержки нуждающихся граждан через предоставление адресной помощи, просветительскую
+          деятельность и формирование культуры осознанного потребления, объединяя усилия общества для решения
+          социальных проблем и улучшения качества жизни социально незащищённых групп населения.
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-3.5">
