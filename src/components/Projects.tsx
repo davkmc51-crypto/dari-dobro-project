@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import SectionHeading from '@/components/SectionHeading';
 import { PROJECTS } from '@/data/site';
@@ -17,8 +18,9 @@ export const Projects = () => (
 
       <div className="mt-14 grid gap-px overflow-hidden rounded-[var(--hero-radius)] sm:grid-cols-2 bg-slate-50">
         {PROJECTS.map((p, i) => (
-          <article
-            key={p.title}
+          <Link
+            key={p.slug}
+            to={`/projects/${p.slug}`}
             className="reveal group relative bg-card p-8 transition-colors hover:bg-muted lg:p-10"
             style={{ transitionDelay: `${i * 60}ms` }}
           >
@@ -34,12 +36,16 @@ export const Projects = () => (
             <h3 className="mt-6 font-display text-2xl font-bold text-foreground">{p.title}</h3>
             <p className="mt-2 max-w-[46ch] text-[0.95rem] text-muted-foreground">{p.text}</p>
 
-            <div className="mt-7 border-t pt-5">
+            <div className="mt-7 flex items-center justify-between border-t pt-5">
               <span className="inline-block rounded-[var(--hero-radius)] bg-muted px-3 py-1.5 text-[0.78rem] font-semibold text-accent">
                 {p.stat}
               </span>
+              <span className="inline-flex items-center gap-1 text-[0.85rem] font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+                Подробнее
+                <Icon name="ArrowRight" size={16} />
+              </span>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </div>
